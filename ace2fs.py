@@ -410,7 +410,7 @@ def main(argv):
 
 
 	#dump_table(f5_stickies)  ### HAY QUE PEGAR LOS STICKIES Y LO DE SSL
-	#dummy_node=spew_node("vordel-firma_certisat02",f5_nodes)
+	#dummy_node=spew_node("dummy",f5_nodes)
 	#dump_table(dummy_node)
 	#dump_table(f5_pools)
 	# SPEW POOLS
@@ -628,7 +628,7 @@ def spew_probe (probe_name, f5_monitors):
 		# 	#    ip-dscp 0
 		# 	#    recv 200
 		# 	#    recv-disable none
-		# 	#    send "GET /nidp/app/heartbeat HTTP/1.1\\r\\nHost: authrfs.siat.sat.gob.mx \\r\\nConnection: Close\\r\\n\\r\\n"
+		# 	#    send "GET /nidp/app/heartbeat HTTP/1.1\\r\\nHost: xxxx\\r\\nConnection: Close\\r\\n\\r\\n"
 		# 	#    time-until-up 0
 		# 	#    timeout 10
 		# 	#}
@@ -1036,12 +1036,12 @@ def search_node(node_to_find, nodes_table):
 #    ip-dscp 0
 #    recv 200
 #    recv-disable none
-#    send "GET /nidp/app/heartbeat HTTP/1.1\\r\\nHost: authrfs.siat.sat.gob.mx \\r\\nConnection: Close\\r\\n\\r\\n"
+#    send "GET /nidp/app/heartbeat HTTP/1.1\\r\\nHost:xxxx\\r\\nConnection: Close\\r\\n\\r\\n"
 #    time-until-up 0
 #    timeout 10
 #}
 
-#ltm monitor http /Common/Probe_sppld.sat.gob.mx_80 {
+#ltm monitor http /Common/Probexxxxx.yyy.mx_80 {
 #    adaptive disabled
 #    defaults-from /Common/http
 #    destination *:80
@@ -1049,12 +1049,12 @@ def search_node(node_to_find, nodes_table):
 #    ip-dscp 0
 #    recv 302
 #    recv-disable none
-#    send "GET /nesp/app/heartbeat HTTP/1.1\r\nHost: sppld.sat.gob.mx\r\nConnection: close\r\n\r\n"
+#    send "GET /nesp/app/heartbeat HTTP/1.1\r\nHost: xxxxx.com \r\nConnection: close\r\n\r\n"
 #    time-until-up 0
 #    timeout 91
 #}
 
-#ltm monitor tcp /Common/DECLARA-ANUALES-PIA-V1-PROBE-9600 {
+#ltm monitor tcp /Common/xxxxxxx {
 #    adaptive disabled
 #    defaults-from /Common/tcp
 #    destination *:*
@@ -1096,21 +1096,21 @@ def search_node(node_to_find, nodes_table):
 
 	# process profiles
 
-# ltm virtual /Common/VIP_APLICACIONES_SAT_PTO443 {
+# ltm virtual /Common/VIP_sdfsf {
 #     destination /Common/10.56.18.151:443
 #     ip-protocol tcp
 #     mask 255.255.255.255
 #     persist {
-#         /Common/F5-PROD-SAT-APLICACIONES-443 {
+#         /Common/F5-sdfq {
 #             default yes
 #         }
 #     }
 #     pool /Common/FARM_APLICACIONES_PTO443
 #     profiles {
-#         /Common/SAT_SIAT_NOV_CLIENT {
+#         /Common/sdfT {
 #             context clientside
 #         }
-#         /Common/SAT_SIAT_NOV_SERVER {
+#         /Common/sdf {
 #             context serverside
 #         }
 #         /Common/http { }
@@ -1425,7 +1425,7 @@ def explode_probes(probes_dissected):
 		f5_monitors.append({ 'monitor_name': monitor_name, 'monitor_type': monitor_type, 'monitor_port': monitor_port, 'monitor_interval': monitor_interval, 'monitor_timeout': monitor_pass_detect_interval, 'monitor_request': monitor_get_url, 'monitor_expect': monitor_expect_status1, 'monitor_header': monitor_host_header } )
 
 			# create common http monitor
-			#ltm monitor http /Common/Probe_sppld.sat.gob.mx_80 {
+			#ltm monitor http /Common/Probe_fhghjgj80 {
 			#    adaptive disabled
 			#    defaults-from /Common/http
 			#    destination *:80
@@ -1433,7 +1433,7 @@ def explode_probes(probes_dissected):
 			#    ip-dscp 0
 			#    recv 302
 			#    recv-disable none
-			#    send "GET /nesp/app/heartbeat HTTP/1.1\r\nHost: sppld.sat.gob.mx\r\nConnection: close\r\n\r\n"
+			#    send "GET /nesp/app/heartbeat HTTP/1.1\r\nHost:hkjh\r\nConnection: close\r\n\r\n"
 			#    time-until-up 0
 			#    timeout 91
 			#}
